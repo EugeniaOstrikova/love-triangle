@@ -10,15 +10,16 @@ module.exports = function getLoveTrianglesCount(preferences = []) {
         var spichoneeB = preferences[i];
         var spichoneeC = preferences[spichoneeB - 1];
         if(spichoneeB<spichoneeA||spichoneeC<spichoneeA)continue;
-        else if(spichoneeA==spichoneeB==spichoneeC)continue;
+        else if(spichoneeA == spichoneeB || spichoneeA == spichoneeC)continue;
         else if(preferences[spichoneeC - 1] == spichoneeA){
             count = count +1;
         }
-        return count;
-        console.log("i=" + i);
-        console.log("spichoneeA=" + spichoneeA);
-        console.log("spichoneeB=" + spichoneeB);
-        console.log("spichoneeC=" + spichoneeC);
-        console.log("count=" + count);
+
+        // console.log("i=" + i);
+        // console.log("spichoneeA=" + spichoneeA);
+        // console.log("spichoneeB=" + spichoneeB);
+        // console.log("spichoneeC=" + spichoneeC);
+        // console.log("count=" + count);
     }
+    return count;
 };
